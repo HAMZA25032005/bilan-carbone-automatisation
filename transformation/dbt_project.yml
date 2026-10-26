@@ -1,0 +1,22 @@
+name: bilan_carbone
+version: "0.1.0"
+config-version: 2
+profile: bilan_carbone
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+vars:
+  campagne: 2026
+
+models:
+  bilan_carbone:
+    staging:      {+materialized: view}
+    intermediate: {+materialized: view}
+    marts:        {+materialized: table}
+    export:       {+materialized: view}
+
+seeds:
+  bilan_carbone:
+    +schema: ref

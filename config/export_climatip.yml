@@ -1,0 +1,14 @@
+# Paramètres de l'export Climatip (format à confirmer avec la Pilote Bilan Carbone).
+format: csv            # csv ou xlsx
+separateur: ";"        # CSV « Excel français »
+encodage: utf-8-sig
+# Renommage des colonnes de exp_climatip vers les en-têtes attendus par Climatip.
+colonnes:
+  campagne: Campagne
+  domaine: Domaine
+  code_territoire: Territoire
+  code_lp: Ligne de produit
+  libelle: Libellé
+  unite: Unité
+  quantite: Quantité
+  version_regle: Version règle

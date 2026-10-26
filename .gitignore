@@ -1,0 +1,12 @@
+__pycache__/
+.venv/
+*.duckdb
+*.duckdb.wal
+transformation/target/
+transformation/logs/
+transformation/dbt_packages/
+logs/
+data/entree/*.xlsx
+data/sortie/
+!data/entree/.gitkeep
+transformation/.user.yml

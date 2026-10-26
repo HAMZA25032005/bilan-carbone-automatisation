@@ -1,0 +1,18 @@
+# Seul ce fichier change lors de la migration vers Snowflake :
+# passer `target: snowflake` et renseigner les variables d'environnement.
+bilan_carbone:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: "{{ env_var('BC_DUCKDB_PATH', '../bilan_carbone.duckdb') }}"
+      schema: main
+    snowflake:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT', '') }}"
+      user: "{{ env_var('SNOWFLAKE_USER', '') }}"
+      authenticator: externalbrowser
+      role: "{{ env_var('SNOWFLAKE_ROLE', '') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE', '') }}"
+      database: "{{ env_var('SNOWFLAKE_DATABASE', 'BILAN_CARBONE') }}"
+      schema: main
