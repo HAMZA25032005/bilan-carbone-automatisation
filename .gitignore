@@ -9,3 +9,4 @@ logs/
 data/entree/*.xlsx
 data/sortie/
 !data/entree/.gitkeep
+transformation/.user.yml
