@@ -61,3 +61,15 @@ J'ai testé une première piste (formulaires Microsoft Forms par domaine + fusio
 - Forms abandonné.
 - Cible de stockage : Snowflake, compatibilité exigée dès le départ.
 - Calcul des émissions délégué à Climatip.
+- 2026-10-26 — **Architecture C retenue** : fichiers Excel actuels en entrée (aucun changement pour les data owners en 2026), cœur en **Python + dbt + DuckDB** (SQL portable ; migration Snowflake = changer de *target* dans `transformation/profiles.yml`). Power Platform (option B) écartée : démultiplication non portable vers Snowflake. Nouvelle interface de saisie envisagée pour la campagne 2027 seulement.
+- 2026-10-26 — Python OK sur poste / VS Code (non bloquant).
+- 2026-10-26 — Climatip : la tutrice importe des fichiers Excel ; CSV probablement accepté, à confirmer. Export isolé dans `config/export_climatip.yml` + `models/export/exp_climatip.sql`.
+- 2026-10-26 — Règles de démultiplication : la tutrice va les fournir et les expliquer. Elles seront stockées comme **données** (`ref_regle_demultiplication` + `ref_cle_repartition`), pas comme code.
+- 2026-10-26 — Squelette livré et fonctionnel sur données fictives : ingestion tracée, contrôles, démultiplication, anomalies, export, tests dbt (10/10 verts).
+
+## Actions urgentes (chemin critique)
+1. Séance avec la tutrice sous 2 semaines : obtenir le prompt de démultiplication + un exemple réel « 1 saisie → ~20 lignes » + les formules des 6 colonnes de calcul.
+2. Récupérer les référentiels : liste des LP, table clés territoire × LP (OneDrive), transcodage BU ↔ LP (MIS/Hélios).
+3. Prévenir Samy (SI & Data) dès maintenant : présenter le projet comme le prototype Snowflake.
+4. Récupérer un fichier Excel de saisie réel (anonymisé ou structure seule) pour caler `config/mapping_excel.yml`.
+

@@ -1,0 +1,21 @@
+version: 2
+models:
+  - name: stg_saisie
+    columns:
+      - name: id_saisie
+        tests: [unique, not_null]
+  - name: int_saisie_controlee
+    description: Saisies typées avec règle applicable et motif d'anomalie éventuel.
+  - name: fct_repartition
+    description: Table démultipliée par Ligne de Produit (remplace la matrice de fusion).
+    columns:
+      - name: id_repartition
+        tests: [unique, not_null]
+      - name: code_lp
+        tests:
+          - relationships:
+              arguments: {to: ref('ref_lp'), field: code_lp}
+  - name: anomalies_saisie
+    description: Saisies rejetées, à corriger par les data owners.
+  - name: exp_climatip
+    description: Données prêtes à importer dans Climatip.

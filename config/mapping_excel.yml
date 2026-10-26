@@ -1,0 +1,13 @@
+# Correspondance entre les en-têtes du fichier Excel de saisie et les colonnes
+# normalisées de raw_saisie. Ajouter ici les variantes rencontrées d'une année
+# ou d'un domaine à l'autre plutôt que de modifier le code.
+onglet_saisie: "Saisie"
+colonnes:
+  domaine:        ["Domaine", "Code domaine", "Matrice"]
+  territoire:     ["Territoire", "Code territoire"]
+  libelle:        ["Libellé", "Libelle", "Description"]
+  quantite:       ["Quantité", "Quantite", "Valeur"]
+  unite:          ["Unité", "Unite"]
+  data_owner:     ["Data owner", "Saisi par", "Responsable"]
+  commentaire:    ["Commentaire", "Commentaires"]
+obligatoires: [domaine, territoire, quantite, unite]

@@ -1,0 +1,3 @@
+campagne,domaine,type_cle,version_regle,description
+2026,VEVE-DEPL,CLE_EFFECTIF,v0-fictive,Exemple fictif : déplacements répartis selon les effectifs par LP
+2026,ENER-ELEC,CLE_SITES,v0-fictive,Exemple fictif : électricité répartie selon les sites par LP
